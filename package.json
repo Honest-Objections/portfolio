@@ -10,9 +10,23 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "autoprefixer": "^10.4.0",
         "axios": "^0.21",
+        "browser-sync": "^2.27.7",
+        "browser-sync-webpack-plugin": "^2.3.0",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14"
+        "postcss": "^8.4.4",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.44.0",
+        "sass-loader": "^12.3.0",
+        "tailwindcss": "^2.2.19",
+        "vue-loader": "^16.8.3"
+    },
+    "dependencies": {
+        "@tailwindcss/typography": "^0.4.1",
+        "color-thief-node": "^1.0.4",
+        "vue": "^3.2.23",
+        "vue3-markdown-it": "^1.0.9"
     }
 }
