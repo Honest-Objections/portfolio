@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProjectController;
+
+use App\Http\Resources\PortfolioResource; 
+use App\Models\Portfolio; 
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.app');
+Route::redirect('/', 'project'); 
+
+Route::resource('project', ProjectController::class);
+
+Route::get('/api/portfolio/{id}', function ($id) {
+    return new PortfolioResource(Portfolio::findOrFail($id));
 });

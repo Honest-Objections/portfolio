@@ -24,8 +24,10 @@
         "vue-loader": "^16.8.3"
     },
     "dependencies": {
+        "@tailwindcss/forms": "^0.4.0",
         "@tailwindcss/typography": "^0.4.1",
         "color-thief-node": "^1.0.4",
+        "tailwind": "^4.0.0",
         "vue": "^3.2.23",
         "vue3-markdown-it": "^1.0.9"
     }
