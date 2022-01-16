@@ -1,10 +1,10 @@
 <template>
-    <div class="px-8 flex flex-col justify-center items-center transition-height snap-start bg-cover text-white" :class="[active ? 'h-screen text-left' : 'h-80 text-center']" :style="{'background-image': background }">
-        <div class="divide-y-4 overflow-y-auto overscroll-contain prose text-white">
+    <div class="px-8 flex flex-col justify-center items-center transition-height snap-start bg-cover" :class="[active ? 'h-screen text-left' : 'h-80 text-center']" :style="{'background-image': background }">
+        <div class="divide-y-4 overflow-y-auto overscroll-contain prose prose-white md:prose-md lg:prose-lg xl:prose-xl">
             <h2 class="bg-clip-text bg-gradient-to-r from-green-400 to-blue-500" style="font-size: 2rem; color:transparent">{{ project.name }}</h2>
             <markdown :source="(active ? project.description : project.description.split('.')[0])"></markdown>
         </div>
-        <button @click="active=!active">See {{ active ? 'less' : 'more' }}</button>
+        <button class="text-white" @click="active=!active">See {{ active ? 'less' : 'more' }}</button>
     </div>
 </template>
 
