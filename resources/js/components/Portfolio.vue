@@ -1,12 +1,13 @@
 <template>
+    <div class="h-screen bg-green-500 flex flex-col justify-center items-center">
         <div class="prose text-center text-grey select-none px-2">
             <div class="md:prose-lg lg:prose-xl">
-            <img class="rounded-full max-h-36 max-w-36 md:max-w-56 md:max-h-56 lg:max-w-72 lg:max-h-72 flex items-center justify-center m-auto" src="/images/chris-profile.jpg" />
-            <h1 style="margin:0px">{{ displayName }}</h1>
-            <p class="my-0" style="margin:0px"><strong>Software Engineer</strong></p>
+                <img class="rounded-full max-h-36 max-w-36 md:max-w-56 md:max-h-56 lg:max-w-72 lg:max-h-72 flex items-center justify-center m-auto" src="/images/chris-profile.jpg" />
+                <h1 style="margin:0px">{{ displayName }}</h1>
+                <p class="my-0" style="margin:0px"><strong>Software Engineer</strong></p>
             </div>
             <div class="prose-sm md:prose-md lg:prose-lg mt-5">
-            <p>{{ personalStatement }}</p>
+                <p>{{ personalStatement }}</p>
             </div>
         </div>
     </div>
