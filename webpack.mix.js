@@ -13,14 +13,12 @@ mix.js('resources/js/app.js', 'public/js')
         open: false
     });
 
-// mix.webpackConfig({
-//     module: {
-//         rules: [
-//             {
-//                 test: /\.worker.js$/,
-//                 loader: 'worker-loader',
-//                 options: { /* ... */ }
-//             },
-//         ]
-//     }
-// }); 
+mix.webpackConfig({
+    resolve: {
+        // ... rest of the resolve config
+        fallback: {
+          "path": require.resolve("path-browserify"),
+          "fs": false
+        }
+    },
+}); 

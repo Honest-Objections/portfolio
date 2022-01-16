@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Markdown from 'vue3-markdown-it';
+import Markdown from './Markdown.vue';
 
 export default {
     props: ['project'],
