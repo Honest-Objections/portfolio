@@ -25,7 +25,8 @@ export default {
 
         this.activeDuration = window.getComputedStyle(this.$el)['transition-duration'].replace('s', '') * 1000  
         
-        this.project.description = this.project.description.replace(/!\[(.*)\]\((.*)\)/, function(complete, description, name) {
+        this.project.description = this.project.description.replace(/!\[([\w\s]*)\]\((.*)\)/g, function(complete, description, name) {
+            
             var photo = self.project.photos.filter(p => {
                 return p.name == name
             })[0];
