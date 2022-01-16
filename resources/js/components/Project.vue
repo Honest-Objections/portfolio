@@ -30,8 +30,12 @@ export default {
             var photo = self.project.photos.filter(p => {
                 return p.name == name
             })[0];
-
-            return `![${description}](${photo.src})`
+            if (photo) {
+                console.log('replacing', complete, 'with', photo.src)
+                return `![${description}](${photo.src})`
+            } else {
+                return `![${description}](${name})`
+            }
         })
     },
     components: {
