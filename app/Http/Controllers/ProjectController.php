@@ -91,19 +91,22 @@ class ProjectController extends Controller
         ]);
         $project->skills()->sync($validated['skills']); 
 
-        foreach ($request->file('photos') as $i => $file) 
+        if ($request->has('photo')) 
         {
-            if ($file->isValid()) {
-                $path = $file->store("images/projects/{$project->id}", 'public'); 
-                $photo = new Image([
-                    'src' => asset('storage/' . $path),
-                    'disk' => 'public',
-                    'relativePath' => $path,
-                    'originalName' => $file->getClientOriginalName()
-                ]); 
+            foreach ($request->file('photos') as $i => $file) 
+            {
+                if ($file->isValid()) {
+                    $path = $file->store("images/projects/{$project->id}", 'public'); 
+                    $photo = new Image([
+                        'src' => asset('storage/' . $path),
+                        'disk' => 'public',
+                        'relativePath' => $path,
+                        'originalName' => $file->getClientOriginalName()
+                    ]); 
 
-                $project->photos()->save($photo); 
-            } 
+                    $project->photos()->save($photo); 
+                } 
+            }
         }
 
         return redirect('/');
