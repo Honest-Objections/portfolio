@@ -20,7 +20,6 @@
 import Project from './Project.vue';
 
 export default {
-  components: { Project },
     data: function () {
         return {
             "displayName": "",
