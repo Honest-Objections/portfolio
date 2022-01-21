@@ -4,10 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        @yield('styles')
+        <meta name="theme-color" content="#096c4b" />
     </head>
 </html>
-<body class="bg-green-500">
+<body class="bg-emerald-500">
     <div id="app">
         @yield('content')
     </div>
