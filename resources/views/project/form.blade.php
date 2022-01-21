@@ -7,7 +7,7 @@
 
 
 @section('content')
-<div class="prose text-center m-auto">
+<div class="prose prose-xl text-center mx-auto my-4">
     <h1>{{ $project ? 'Edit' : 'New' }} Project</h1>
     <form class="flex justify-center flex-col space-y-4 w-3/4 m-auto text-left text-base" method="POST" action="{{ $project ? '/project/'.$project->id : '/project' }}" enctype="multipart/form-data">
         @method($project ? 'PATCH' : 'POST')
