@@ -3,7 +3,7 @@
         <div class="w-screen divide-y-4 overflow-y-auto overscroll-contain">
             <div class="prose prose-white md:prose-md lg:prose-lg xl:prose-xl mx-auto">
                 <h2 class="bg-clip-text bg-gradient-to-r from-green-400 to-blue-500" style="font-size: 2rem; color:transparent">{{ project.name }}</h2>
-                <markdown :source="(active ? project.description : project.description.split('.')[0])"></markdown>
+                <markdown :source="(active ? project.description : project.description.split('. ')[0])"></markdown>
             </div>
         </div>
         <button class="text-white" @click="active=!active">See {{ active ? 'less' : 'more' }}</button>
