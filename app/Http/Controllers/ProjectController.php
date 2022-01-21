@@ -82,6 +82,7 @@ class ProjectController extends Controller
             'name' => 'required|max:255',
             'description' => 'required',
             'skills' => 'min:1',
+            'background' => ''
         ]);
 
         $project = Project::find($id);
@@ -91,7 +92,7 @@ class ProjectController extends Controller
         ]);
         $project->skills()->sync($validated['skills']); 
 
-        if ($request->has('photo')) 
+        if ($request->hasFile('photos')) 
         {
             foreach ($request->file('photos') as $i => $file) 
             {
@@ -107,6 +108,11 @@ class ProjectController extends Controller
                     $project->photos()->save($photo); 
                 } 
             }
+        }
+
+        if ($request->has('background')) {
+            $photo = Image::find($validated['background']);
+            if ($photo) $project->setBackgroundImage($photo); 
         }
 
         return redirect('/');
