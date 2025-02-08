@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ImageController;
 
 use App\Http\Resources\PortfolioResource; 
 use App\Models\Portfolio; 
@@ -29,3 +30,5 @@ Route::resource('project', ProjectController::class);
 Route::get('/api/portfolio/{id}', function ($id) {
     return new PortfolioResource(Portfolio::findOrFail($id));
 });
+
+Route::delete('/api/images/{id}', [ImageController::class, 'destroy']); 
