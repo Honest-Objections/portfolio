@@ -24,14 +24,14 @@ class CreateProjectsTable extends Migration
         Schema::create('project_skills', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->foreignId('project_id')->constrained();
-            $table->foreignId('skill_id')->constrained();
+            $table->foreignId('project_id')->constrained()->onDelete('cascade');
+            $table->foreignId('skill_id')->constrained()->onDelete('cascade');
         });
 
         Schema::create('project_photos', function(Blueprint $table) {
             $table->increments('id');
-            $table->foreignId('project_id')->constrained();
-            $table->foreignId('image_id')->constrained();
+            $table->foreignId('project_id')->constrained()->onDelete('cascade');
+            $table->foreignId('image_id')->constrained()->onDelete('cascade');
         });
     }
 
@@ -42,8 +42,8 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects');
-        Schema::dropIfExists('project_skills');
         Schema::dropIfExists('project_photos');
+        Schema::dropIfExists('project_skills');
+        Schema::dropIfExists('projects');
     }
 }
