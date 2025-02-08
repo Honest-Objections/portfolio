@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col justify-center items-center transition-height snap-start bg-cover" :class="[active ? 'h-screen text-left' : 'h-80 text-center']" :style="{'background-image': background }">
-        <div class="py-6 overscroll-contain" :class="[active ? 'overflow-y-auto flex-1 flex m-auto': '']">
+        <div class="w-full py-6 overscroll-contain" :class="[active ? 'overflow-y-auto flex-1 flex m-auto': '']">
             <div class="prose prose-white md:prose-md lg:prose-lg xl:prose-xl mx-auto divide-y-4">
                 <h2 class="bg-clip-text bg-gradient-to-r from-green-400 to-blue-500" style="font-size: 2rem; color:transparent">{{ project.name }}</h2>
                 <markdown :source="(active ? project.description : project.description.split('. ')[0])"></markdown>
