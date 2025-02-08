@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ImageController;
 
@@ -17,6 +18,10 @@ use App\Models\Portfolio;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+if (App::environment('production')) {
+    URL::forceScheme('https');
+}
 
 Route::redirect('/', 'project'); 
 
